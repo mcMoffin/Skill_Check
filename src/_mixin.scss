@@ -1,0 +1,20 @@
+@mixin gradient-icon {
+    background: linear-gradient(90.85deg, #AE5DD7 13.77%, #0D6EFD 200%);
+    -webkit-mask-image: var(--svg-content);
+    mask-image: var(--svg-content);
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    transition: opacity 0.3s ease;
+}
+
+@mixin gradient-span {
+    background: linear-gradient(90.85deg, #AE5DD7 -13.77%, #0D6EFD 100.36%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin grid-columns {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr 1fr;
+}
