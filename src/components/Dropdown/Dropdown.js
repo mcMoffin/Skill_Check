@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from 'react';
-import PropTypes from 'prop-types';
 import SVGIcon from '../SVGIcon/SVGIcon';
 
 function Dropdown({ className, defaultOption, options = [], onSelect }) {
@@ -16,24 +15,27 @@ function Dropdown({ className, defaultOption, options = [], onSelect }) {
 
     const renderOption = useCallback((option) => (
         <div
-            key={option.value}
-            className={`option ${option.className}`}
+            key={option.value ? option.value : option}
+            className={`option ${option.className ? option.className : ''}`}
             onClick={() => handleOptionSelect(option)}
         >
-            {option.img && (
+            {option.img ? (
                 <SVGIcon 
                     className={`icon ${option.className === 'upgrade' ? 'gradient-icon' : ''}`}
                     svg_url={option.img.src}
                 />
-            )}
-            <span>{option.text}</span>
+            ) : null}
+            <span>{option.text ? option.text : option}</span>
         </div>
     ), [handleOptionSelect]);
 
     return (
-        <div className={`custom_dropdown ${className}`}>
-            <div onClick={toggleDropdown} className={`default_option ${defaultOption.className}`}>
-                {defaultOption.img && (
+        <div className={`custom_dropdown ${className ? className : ''}`}>
+            <div
+                onClick={toggleDropdown}
+                className={`default_option ${defaultOption.className ? defaultOption.className : ''}`}
+            >
+                {defaultOption.img ? (
                     defaultOption.img.src.endsWith('.svg') ? (
                         <SVGIcon {...defaultOption.img} />
                     ) : (
@@ -42,8 +44,8 @@ function Dropdown({ className, defaultOption, options = [], onSelect }) {
                             alt={defaultOption.img.alt}
                         />
                     )
-                )}
-                <span>{defaultOption.text}</span>
+                ) : null}
+                <span>{defaultOption.text ? defaultOption.text : defaultOption}</span>
                 <SVGIcon
                     className="chevron"
                     svg_url={`${process.env.PUBLIC_URL}/assets/icons/chevron-${isOpen ? 'up' : 'down'}.svg`}
@@ -57,30 +59,5 @@ function Dropdown({ className, defaultOption, options = [], onSelect }) {
         </div>
     );
 }
-
-Dropdown.propTypes = {
-    className: PropTypes.string,
-    defaultOption: PropTypes.shape({
-        text: PropTypes.string.isRequired,
-        className: PropTypes.string,
-        img: PropTypes.shape({
-            src: PropTypes.string.isRequired,
-            alt: PropTypes.string,
-            width: PropTypes.number,
-            height: PropTypes.number,
-        }),
-    }).isRequired,
-    options: PropTypes.arrayOf(
-        PropTypes.shape({
-            value: PropTypes.string.isRequired,
-            text: PropTypes.string.isRequired,
-            className: PropTypes.string,
-            img: PropTypes.shape({
-                src: PropTypes.string.isRequired,
-            }),
-        })
-    ).isRequired,
-    onSelect: PropTypes.func.isRequired,
-};
 
 export default Dropdown;

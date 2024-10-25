@@ -1,0 +1,140 @@
+footer {
+    width: 100%;
+    padding: 40px 10px;
+    border-top: 1px solid #E5E7EB;
+    background-color: #111827;
+    color: #D1D5DB;
+    margin-top: 74px;
+
+    .main_footer {
+        max-width: 1120px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        .main_footer_wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+
+            .footer_left {
+                max-width: 357px;
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+
+                .container {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    gap: 24px;
+
+                    .tiiny_footer_logo {
+                        width: 100px;
+                        height: auto;
+                    }
+
+                    .aws_logo {
+                        width: 100px;
+                        height: auto;
+                    }
+                }
+
+                .social {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                }
+            }
+
+            .footer_right {
+                display: flex;
+                flex-direction: row;
+                align-items: start;
+                flex-wrap: wrap;
+                max-width: 739px;
+                gap: 24px;
+            }
+        }
+    }
+
+    .copyright_container {
+        margin-top: 24px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        border-top: 1px solid #374151;
+
+        .copyright {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            * {
+                padding: 10px;
+            }
+        }
+    }
+}
+
+// Tablet styles
+@media screen and (min-width: 768px) {
+    footer {
+        padding: 20px 30px;
+
+        .main_footer {
+            width: 90%;
+
+            .main_footer_wrapper .footer_left .container {
+                .tiiny_footer_logo {
+                    width: 70px;
+                    height: auto;
+                }
+
+                .aws_logo {
+                    width: 70px;
+                    height: auto;
+                }
+            }
+        }
+
+        .copyright_container {
+            .copyright {
+                flex-direction: row;
+            }
+        }
+    }
+}
+
+// Desktop styles
+@media screen and (min-width: 1440px) {
+    footer {
+        padding: 20px 30px;
+
+        .main_footer {
+            width: 1120px;
+
+            .main_footer_wrapper .footer_left .container {
+                .tiiny_footer_logo {
+                    width: 100px;
+                    height: auto;
+                }
+
+                .aws_logo {
+                    width: 100px;
+                    height: auto;
+                }
+            }
+        }
+
+        .copyright_container {
+            .copyright {
+                flex-direction: row;
+            }
+        }
+    }
+}

@@ -45,7 +45,7 @@ const SVGIcon = ({ className, svg_url, id }) => {
 
     return (
         <span 
-            className={className} 
+            className={`svgIcon ${className}`} 
             dangerouslySetInnerHTML={{ __html: svgContent }}
             style={iconStyle}
         />

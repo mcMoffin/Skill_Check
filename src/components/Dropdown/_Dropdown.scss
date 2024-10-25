@@ -1,12 +1,12 @@
 // Custom dropdown container
 .custom_dropdown {
     position: relative;
-    display: none;
+    display: inline-block;
     border: 1px solid $quaternary_color;
     border-radius: 10px;
 
     .default_option {
-        width: 140px;
+        max-width: 140px;
         height: 36px;
         padding: 8px 12px;
         cursor: pointer;
@@ -37,7 +37,7 @@
         align-items: center;
 
         &:hover {
-            background-color: #f0f0f0 !important;
+            background-color: #f0f0f0;
         }
 
         .icon {
@@ -88,11 +88,5 @@
             stroke: $default_txt;
             stroke-width: 2px;
         }
-    }
-}
-
-@media screen and (min-width: 1440px) {
-    .custom_dropdown {
-        display: inline-block;
     }
 }

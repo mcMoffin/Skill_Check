@@ -1,0 +1,19 @@
+.tab_menue {
+    width: 100%;
+    height: 45px;
+    border-bottom: 1px solid $quaternary_color;
+    margin-bottom: 32px;
+    line-height: 21px;
+
+    .tab {
+        height: 45px;
+        padding: 12px;
+        color: $inactive_txt;
+    }
+
+    .tab.active {
+        font-weight: 700;
+        color: $hilight_txt;
+        border-bottom: 2px solid $hilight_txt;
+    }
+}
