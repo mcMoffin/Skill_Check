@@ -136,15 +136,29 @@
         flex: 0 0 64px;
     }
 
-    .pagination {
+    .pagination_container {
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         flex-direction: row;
         gap: 10px;
         color: $tertiary_color;
         padding-top: 16px;
+
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: 500;
+
+        .pagination {
+            width: 212px;
+            padding-left: 118px;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex: 1 1 auto;
+            gap: 0px;
+        }
 
         .pagination-text {
             display: flex;
@@ -168,7 +182,9 @@
         }
 
         .pagination_dropdown_container {
+            max-width: 118px;
             display: flex;
+            justify-content: end;
             align-items: center;
             gap: 8px;
         }

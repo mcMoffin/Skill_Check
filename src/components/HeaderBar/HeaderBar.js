@@ -87,22 +87,31 @@ const HeaderBar = () => {
         <nav className={isNavOpen ? 'open' : ''}>
             <ul>
                 <li>
-                <a href="/">
-                    <img src="/assets/icons/chat-bubble-left.svg" width={15} height={15} alt="Support icon" />
-                    <span>Support</span>
-                </a>
+                    <a href="/">
+                        <SVGIcon
+                            className='support'
+                            svg_url={`${process.env.PUBLIC_URL}/assets/icons/chat-bubble-left.svg`}
+                        />
+                        <span>Support</span>
+                    </a>
                 </li>
                 <li>
-                <a href="/">
-                    <img src="/assets/icons/open-book.svg" width={15} height={15} alt="Help Guide icon" />
-                    <span>Help Guide</span>
-                </a>
+                    <a href="/">
+                        <SVGIcon
+                            className='help'
+                            svg_url={`${process.env.PUBLIC_URL}/assets/icons/open-book.svg`}
+                        />
+                        <span>Help Guide</span>
+                    </a>
                 </li>
                 <li>
-                <a href="/">
-                    <img src="/assets/icons/bolt.svg" width={15} height={15} alt="Integrations icon" />
-                    <span>Integrations</span>
-                </a>
+                    <a href="/">
+                        <SVGIcon
+                            className='integrations'
+                            svg_url={`${process.env.PUBLIC_URL}/assets/icons/bolt.svg`}
+                        />
+                        <span>Integrations</span>
+                    </a>
                 </li>
             </ul>
         </nav>

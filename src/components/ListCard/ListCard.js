@@ -92,39 +92,57 @@ const ListCard = ({name, items, children }) => {
             >
               <div className='actions_list'>
                 <button className="editBtn">
-                  <img src={`${process.env.PUBLIC_URL}/assets/icons/pencil-square.svg`} alt="Edit" className="actionIcon"/>
+                  <SVGIcon
+                    svg_url={`${process.env.PUBLIC_URL}/assets/icons/pencil-square.svg`}
+                    className="actionIcon"
+                  />
                 </button>
                 <button className="pingBtn">
-                  <img src={`${process.env.PUBLIC_URL}/assets/icons/chart-bar.svg`} alt="ping" className="actionIcon"/>
+                  <SVGIcon
+                    svg_url={`${process.env.PUBLIC_URL}/assets/icons/chart-bar.svg`}
+                    className="actionIcon"
+                  />
                 </button>
                 <button className="linkBtn">
-                  <img src={`${process.env.PUBLIC_URL}/assets/icons/link.svg`} alt="link" className="actionIcon"/>
+                  <SVGIcon
+                    svg_url={`${process.env.PUBLIC_URL}/assets/icons/link.svg`}
+                    className="actionIcon"
+                  />
                 </button>
                 <button className="ellipsisBtn">
-                  <img src={`${process.env.PUBLIC_URL}/assets/icons/elipsis-vertical.svg`} alt="menue" className="actionIcon"/>
+                  <SVGIcon
+                    svg_url={`${process.env.PUBLIC_URL}/assets/icons/elipsis-vertical.svg`}
+                    className="actionIcon"
+                  />
                 </button>
               </div>
             </ListItem>
           ))}
         </div>
         {totalPages > 1 && (
-          <div className='pagination'>
-            <Button className='startBtn' onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>{'<<'}</Button>
-            <Button className='prevBtn' onClick={handlePrevPage} disabled={currentPage === 1}>{'<'}</Button>
-            <span className='pagination-text'>
-              <div className='pagination-current'>
-                {`${currentPage}`}
-              </div>
-              {` of ${totalPages}`}
+          <div className='pagination_container'>
+            <div  className='pagination'>
+              <Button className='startBtn' onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>{'<<'}</Button>
+              <Button className='prevBtn' onClick={handlePrevPage} disabled={currentPage === 1}>{'<'}</Button>
+              <span className='pagination-text'>
+                page
+                <div className='pagination-current'>
+                  {`${currentPage}`}
+                </div>
+                {` of ${totalPages}`}
+              </span>
+              <Button className='nextBtn' onClick={handleNextPage} disabled={currentPage === totalPages}>{'>'}</Button>
+              <Button className='endBtn' onClick={() => setCurrentPage(totalPages)} disabled={currentPage === totalPages}>{'>>'}</Button>
+            </div>
+              <span className='pagination_dropdown_container'>
+              Show
+              <Dropdown
+                className='pagination_dropdown'
+                defaultOption={`${currentPage}`}
+                options={Array.from({ length: totalPages }, (_, index) => index + 1)}
+                onSelect={(value) => {setCurrentPage(value)}}
+              />
             </span>
-            <Button className='nextBtn' onClick={handleNextPage} disabled={currentPage === totalPages}>{'>'}</Button>
-            <Button className='endBtn' onClick={() => setCurrentPage(totalPages)} disabled={currentPage === totalPages}>{'>>'}</Button>
-            <span className='pagination_dropdown_container'>Show <Dropdown
-              className='pagination_dropdown'
-              defaultOption={`${currentPage}`}
-              options={Array.from({ length: totalPages }, (_, index) => index + 1)}
-              onSelect={(value) => {setCurrentPage(value)}}
-            /></span>
           </div>
         )}
       </div>

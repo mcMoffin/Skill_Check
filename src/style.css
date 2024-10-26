@@ -280,8 +280,8 @@ img {
 }
 .list_item .actions .actions_list .actionIcon {
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
 }
 .list_item .actions .actions_menueBtn {
   width: 100%;
@@ -406,7 +406,7 @@ header nav ul li a {
   text-decoration: none;
   gap: 10px;
 }
-header nav ul li a img {
+header nav ul li a .svgIcon {
   width: 20px;
   height: 20px;
 }
@@ -576,22 +576,34 @@ header nav.open {
   width: 64px;
   flex: 0 0 64px;
 }
-.card .pagination {
+.card .pagination_container {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   gap: 10px;
   color: #6B7280;
   padding-top: 16px;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 500;
 }
-.card .pagination .pagination-text {
+.card .pagination_container .pagination {
+  width: 212px;
+  padding-left: 118px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex: 1 1 auto;
+  gap: 0px;
+}
+.card .pagination_container .pagination-text {
   display: flex;
   align-items: center;
   gap: 4px;
 }
-.card .pagination .pagination-text .pagination-current {
+.card .pagination_container .pagination-text .pagination-current {
   width: 29px;
   height: 28px;
   line-height: 12px;
@@ -604,16 +616,18 @@ header nav.open {
   background-color: #F9FAFB;
   border: 1px solid #E5E7EB;
 }
-.card .pagination .pagination_dropdown_container {
+.card .pagination_container .pagination_dropdown_container {
+  max-width: 118px;
   display: flex;
+  justify-content: end;
   align-items: center;
   gap: 8px;
 }
-.card .pagination .button {
+.card .pagination_container .button {
   border-color: transparent;
   color: #E5E7EB;
 }
-.card .pagination:hover {
+.card .pagination_container:hover {
   background-color: transparent;
   color: #6B7280;
 }
