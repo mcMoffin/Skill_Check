@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Skill_Check/static/css/main.4fd19c27.css",
+    "main.js": "/Skill_Check/static/js/main.3bbfd0b5.js",
+    "static/js/453.f475ba4f.chunk.js": "/Skill_Check/static/js/453.f475ba4f.chunk.js",
+    "index.html": "/Skill_Check/index.html",
+    "main.4fd19c27.css.map": "/Skill_Check/static/css/main.4fd19c27.css.map",
+    "main.3bbfd0b5.js.map": "/Skill_Check/static/js/main.3bbfd0b5.js.map",
+    "453.f475ba4f.chunk.js.map": "/Skill_Check/static/js/453.f475ba4f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4fd19c27.css",
+    "static/js/main.3bbfd0b5.js"
+  ]
+}
